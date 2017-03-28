@@ -7,9 +7,112 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <nav class="navbar navbar-toggleable-md navbar-fixed-top navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="images/logo.png" alt="Logo" height="26">
+      </a>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#">Sign in</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <div id="stage">
+      <div id="stage-caption">
+        <h1 class="display-3">That's handy, Calvin! stick it in the startup</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus suscipit dolorum doloribus voluptas illo aliquam assumenda natus eveniet, ut placeat tenetur ratione asperiores culpa, eum dolore accusantium facilis sit quidem.</p>
+        <a href="#" class="btn btn-lg btn-primary">Learn more</a>
+      </div>
+    </div>
+
+    <section id="feature-one">
+      <div class="container">
+        <div class="row feature-content">
+          <div class="col-lg-6">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/9dnc4O2SZXQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="col-lg-5 col-lg-offset-1">
+            <h6>Watch this</h6>
+            <h2>Witness the power of Startup.logo in this acceplla video.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsa velit est voluptas laboriosam blanditiis voluptates cupiditate maxime odio error aut odit, facere saepe itaque, eos maiores voluptatum nulla cumque!</p>
+            <a href="#" class="btn btn-outline-info btn-lg">Learn more...</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feature-two" class="feature-dark">
+      <div class="container">
+        <div class="row feature-content">
+          <div class="col-lg-6 feature-caption">
+            <h6>Incredible features.</h6>
+            <h2>Totally random websites. At the touch of your finger pads.</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium necessitatibus non autem fuga vero temporibus sed distinctio, velit minus nesciunt dolores facilis cum, ullam nam, laboriosam, doloribus esse quidem saepe.
+            </p>
+            <a href="#" class="btn btn-outline-success btn-lg">Learn more...</a>
+          </div>
+          <div class="col-lg-6 text-sm-center hidden-sm-down">
+            <img src="images/iphone-1.png" alt="Iphone 1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feature-three">
+      <div class="container">
+        <div class="row feature-content">
+          <div class="col-lg-6 hidden-sm-down">
+            <img src="images/macbook.png" alt="macbook">
+          </div>
+          <div class="col-lg-5 col-lg-offset-1">
+            <h6>The wow factor.</h6> 
+            <h2>Australians wouldn't give a startup.logo for anything esle.</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, amet cum quod. Expedita unde quae ab temporibus harum sunt, iusto nulla velit vitae nobis dolor incidunt officia quia similique ad.</p>
+            <a href="#" class="btn btn-outline-success btn-lg">Learn more...</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feature-four" class="feature-alt">
+      <div class="container">
+        <div class="row feature-content">
+          <div class="col-lg-6">
+            <h6>Kudos</h6>
+            <blockquote class="blockquote">
+              &ldquo;No Startup.logo, no kiss.&rdquo;
+              <footer class="blockquote-footer">
+                Brelvis Hesly, <cite>Some guy at a wedding.</cite> 
+              </footer>
+            </blockquote>
+          </div>
+          <div class="col-lg-6 hidden-md-down">
+            <img src="images/brad-elvis.png">
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
