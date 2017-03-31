@@ -10,24 +10,23 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
 			.sidebar-nav{
-				position: absolute;
-				left:0px;
+				position: fixed;
+				left:-320px;
 				top:0;
-				width:0px;
+				width:320px;
 				height:100%;
-				display: none;
 				background:#f0f0f0;
+				overflow-x: hidden;
 				z-index:1000;
 
-				-webkit-transition: width 35s ease-in;
-        -moz-transition: width 35s ease-in;
-        -ms-transition: width 35s ease-in;
-        -o-transition: width 35s ease-in;
-        transition: width 35s ease-in;
+				-webkit-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        -ms-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
 			}
 			.sidebar-nav.active{
-				display: block;
-				width:320px;
+				left:0px;
 			}
     </style>
   </head>
@@ -41,8 +40,11 @@
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 		</div>
+
+		<p>I hope you are fine with this situation.</p>
 		<div class="container">
-			<a href="#" data-target="#mynav" class="btn btn-outline-success sidebar-nav-toggler">Show</a>
+			<a href="#mynav" class="btn btn-outline-success sidebar-nav-toggler">Show</a>
+			<button type="button" data-target="#mynav" class="btn btn-outline-primary sidebar-nav-toggler1">Show</a>
 		</div>
 
 		<!-- jQuery first, then Tether, then Bootstrap JS. -->
