@@ -7,50 +7,245 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-			.sidebar-nav{
-				position: fixed;
-				left:-320px;
-				top:0;
-				width:320px;
-				height:100%;
-				background:#f0f0f0;
-				overflow-x: hidden;
-				z-index:1000;
 
-				-webkit-transition: left 0.3s ease-in;
-        -moz-transition: left 0.3s ease-in;
-        -ms-transition: left 0.3s ease-in;
-        -o-transition: left 0.3s ease-in;
-        transition: left 0.3s ease-in;
-			}
-			.sidebar-nav.active{
-				left:0px;
-			}
     </style>
   </head>
+
   <body>
-		<div id="mynav" class="sidebar-nav">
-			<ul class="list-unstyled">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Portfolios</a></li>
-				<li><a href="#">Work</a></li>
+  	<nav class="navbar navbar-toggleable-md navbar-fixed-top navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="images/logo.png" alt="Logo" height="26">
+      </a>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#">Sign in</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+  	<!-- Only Mobile -->
+		<div id="mobileNavbar" class="sidebar-wrapper">
+			<ul class="mobile-sidebar-menu">
+				<li class="header">Navigation Menu</li>
+				<li><a href="#"><i class="fa fa-home ico-menu"></i>Home</a></li>
+				<li><a href="#"><i class="fa fa-user ico-menu"></i>About Us</a></li>
+				<li class="treeview">
+					<a href="#collapse-menu-1" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-menu-1">
+						<i class="fa fa-bus ico-menu"></i>
+						Portfolios
+					</a>
+					<ul id="collapse-menu-1" class="collapse treeview-menu">
+						<li><a href="#">Menu 1</a></li>
+						<li><a href="#">Menu 2</a></li>
+						<li><a href="#">Menu 3</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#collapse-menu-2" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-menu-2">
+						<i class="fa fa-bus ico-menu"></i>
+						Work
+					</a>
+					<ul id="collapse-menu-2" class="collapse treeview-menu">
+						<li><a href="#">Menu 1</a></li>
+						<li><a href="#">Menu 2</a></li>
+						<li><a href="#">Menu 3</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 		</div>
-
-		<p>I hope you are fine with this situation.</p>
+  	<!-- Only Mobile -->
+  	<!--
 		<div class="container">
-			<a href="#mynav" class="btn btn-outline-success sidebar-nav-toggler">Show</a>
-			<button type="button" data-target="#mynav" class="btn btn-outline-primary sidebar-nav-toggler1">Show</a>
+			<a href="#mobileNavbar" class="btn btn-outline-success sidebar-wrapper-toggler">Show</a>
 		</div>
+		-->
+
+  	<div class="container">
+			<div class="row">
+				<!-- Left Sidebar - desktop verison -->
+				<div class="col-lg-3 hidden-md-down">
+					<!-- Search Category -->
+					<div class="card card-outline-info mb-4">
+					  <div class="card-header">CATEGORIES</div>
+				  	<ul class="card-treeview">
+							<li class="tree-menu">
+								<a href="#">Fahsion</a>
+								<ul class="submenu">
+									<li class="leaf"><a href="#">sub menu1</a></li>
+									<li class="leaf"><a href="#">sub menu2</a></li>
+									<li class="leaf"><a href="#">sub menu3</a></li>
+								</ul>	
+							</li>
+							<li class="tree-menu">
+								<a href="#">Bag & Shoes</a>
+								<ul class="submenu">
+									<li class="leaf"><a href="#">sub menu1</a></li>
+									<li class="leaf"><a href="#">sub menu2</a></li>
+									<li class="leaf"><a href="#">sub menu3</a></li>
+								</ul>	
+							</li>
+							<li class="tree-menu">
+								<a href="#">Electronics</a>
+								<ul class="submenu">
+									<li class="leaf"><a href="#">sub menu1</a></li>
+									<li class="leaf"><a href="#">sub menu2</a></li>
+									<li class="leaf"><a href="#">sub menu3</a></li>
+								</ul>	
+							</li>
+							<li class="tree-menu">
+								<a href="#">Real Estate</a>
+								<ul class="submenu">
+									<li class="leaf"><a href="#">sub menu1</a></li>
+									<li class="leaf"><a href="#">sub menu2</a></li>
+									<li class="leaf"><a href="#">sub menu3</a></li>
+								</ul>	
+							</li>
+							<li class="tree-menu">
+								<a href="#">Vehicles</a>
+								<ul class="submenu">
+									<li class="leaf"><a href="#">sub menu1</a></li>
+									<li class="leaf"><a href="#">sub menu2</a></li>
+									<li class="leaf"><a href="#">sub menu3</a></li>
+								</ul>	
+							</li>
+				  	</ul>
+					</div>	
+					<!-- End Search Category -->
+					<div class="card card-outline-info mb-4">
+						<div class="card-header">REFINE</div>
+						<div class="card-block">
+							<p>I'm awesome</p>
+						</div>
+					</div>
+				</div>
+				<!-- End Left Sidebar - desktop verison -->
+				<div class="col-lg-9">
+					<div class="row">
+						<div class="col-6">
+							<div class="dropdown">
+							  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Newest Items
+							  </a>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							    <a class="dropdown-item" href="#">Newest Items</a>
+							    <a class="dropdown-item" href="#">Price</a>
+							    <a class="dropdown-item" href="#">Most Popular</a>
+							  </div>
+							</div>
+						</div>
+						<div class="col-6">
+							<ul class="list-inline pull-right">
+								<li class="list-inline-item">
+									<a href="#" class="btn btn-outline-info active">
+										<i class="fa fa-th-large"></i> 
+										<span class="hidden-md-down">Grid</span>
+									</a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="btn btn-outline-info">
+										<i class="fa fa-th"></i> 
+										<span class="hidden-md-down">List</span>
+									</a>
+								</li>
+								<li class="list-inline-item hidden-lg-up">
+									<a href="#mobileNavbar" class="btn btn-outline-info sidebar-wrapper-toggler"><i class="fa fa-filter"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <p class="card-subtitle text-muted">Computer 1</p>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <h6 class="card-subtitle mb-2 text-muted">Computer 1</h6>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <h6 class="card-subtitle mb-2 text-muted">Computer 1</h6>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <p class="card-subtitle text-muted">Computer 1</p>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <h6 class="card-subtitle mb-2 text-muted">Computer 1</h6>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-sm-6 col-lg-4 mb-4">
+						  <div class="card">
+						    <img class="card-img-top" src="images/computer.jpg" alt="Card image cap">
+						    <div class="card-block">
+						      <h6 class="card-subtitle mb-2 text-muted">Computer 1</h6>
+							    <a href="#" class="card-link">Card link</a>
+							    <a href="#" class="card-link">Another link</a>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+  	</div>
+
+		
 
 		<!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/default.js"></script>
     <script src="js/bsPlugin.js"></script>
   </body>
  </html>

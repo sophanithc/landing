@@ -1,24 +1,28 @@
 (function($){
   $.fn.CollapseSidebar = function(options, callback){
     var $me = this;
-    var sidebarClass ="sidebar-nav";
-    var actionClass ="sidebar-nav-toggler";
+    var sidebarClass ="sidebar-wrapper";
+    var actionClass ="sidebar-wrapper-toggler";
+    var $overlay = $("#body-overlay");
     var $nav; 
 
     var onNodeclick = function(e){
       e.preventDefault();
 
       if($nav.hasClass("active")){
-        $nav.removeClass("active");
-        $nav.css("left", 0);
+        showSidebar(false);
       }else{
-        $nav.addClass("active");
-        $nav.css("left", "-" + $nav.css("width"));
+        showSidebar(true);
       }
+    }
+
+    var onMaskClick = function(e){
+      showSidebar(false);
     }
 
     var bindEvents = function(){
       $me.on("click", onNodeclick);
+      $overlay.on("click", onMaskClick);
     }
 
     var getSidebar = function(){
@@ -28,22 +32,60 @@
       }else{
         $sidebarEl = ($me.data()  || $me.data().target) ? $($me.data().target) : null;
       }
+      if($sidebarEl && $sidebarEl.hasClass(sidebarClass)){
+        if(!$overlay.length){
+          // injected body-overlay to the page
+          $("body").prepend('<div id="body-overlay"></div');
+          $overlay = $("#body-overlay");
+        }
 
-      return ($sidebarEl && $sidebarEl.hasClass(sidebarClass)) ? $sidebarEl : null;
+        return $sidebarEl;
+      }else{
+        return null;
+      }
+    }
+
+    var showSidebar = function(show){
+      if(show !== true){
+        $nav.removeClass("active");
+        $nav.css("left", "-" + $nav.css("width"));
+        showBodyMask(false);
+      }else{
+        $nav.addClass("active");
+        $nav.css("left", 0);
+        showBodyMask(true);
+      }
+    }
+
+    var showBodyMask = function(show){
+      if(show === true){
+        $overlay.css({
+                      "display":"block", 
+                      "height":"100%",
+                      "width":"100%",
+                    });
+      }else{
+        $overlay.css({
+                      "display":"none", 
+                      "height":"0",
+                      "width":"0",
+                    });
+      }
     }
 
     var configSingleOption = function(opt){
       switch (opt){
         case "show":
-          $nav.addClass("active");
+          showSidebar(true)
           break;
         case "hide":
-          $nav.removeClass("active");
+          showSidebar(false)
           break;
         default:
           console.warn("CollpaseSidebar: Invalid option");
       }
     }
+
     var configSettingOptions = function(settings){
       for(var k in settings){
         if(k == "sidebar"){
@@ -54,13 +96,17 @@
           }
         }else if(k == "show"){
           if(settings[k] === true){
-            $nav.addClass("active");
+            showSidebar(true);
           }else{
-            $nav.removeClass("active");
+            showSidebar(false);
           }
         }else if(k == "width"){
           $nav.css(k,settings[k]) ;
-          $nav.css("left","-" + settings[k] + "px") ;
+          if(settings["show"] && settings["show"]=== true){
+            showSidebar(true);
+          }else{
+            showSidebar(false);
+          }
         }
       }
     }
@@ -76,12 +122,12 @@
       bindEvents();
 
       if(typeof options == "string"){
-        configSingleOptions(options);
+        configSingleOption(options);
       }else{
         var settings = $.extend({
           sidebar:"left", // valid value: "left" and "right"
           width:300,
-          show:true
+          show:false
         }, options);
         configSettingOptions(settings);
 
@@ -99,7 +145,7 @@ $(document).ready(function(){
   //var $dom = $("#mynav");
   //var test = $dom.CollapseSidebar({sidebar:"right",width:500});
 
-  var $btnSidebar = $(".sidebar-nav-toggler");
+  var $btnSidebar = $(".sidebar-wrapper-toggler");
   $btnSidebar.CollapseSidebar();
 
 });

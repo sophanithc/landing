@@ -2,12 +2,26 @@
 		Style.scss
 -----------------------*/
 html, body {
-  height: 100%; }
+  height: 100%;
+  color: #333; }
 
 body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
   color: #6c6f73; }
+
+#body-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 9998;
+  display: none;
+  background: rgba(3, 3, 3, 0.5); }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333; }
@@ -19,6 +33,124 @@ h6 {
 
 img {
   max-width: 100%; }
+
+.sidebar-wrapper {
+  position: fixed;
+  left: -320px;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: #222d32;
+  color: #FFFFFF;
+  overflow-x: hidden;
+  z-index: 9999;
+  -webkit-transition: left 0.3s ease-in;
+  -moz-transition: left 0.3s ease-in;
+  -ms-transition: left 0.3s ease-in;
+  -o-transition: left 0.3s ease-in;
+  transition: left 0.3s ease-in; }
+
+.sidebar-wrapper.active {
+  left: 0px; }
+
+ul.mobile-sidebar-menu {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+  ul.mobile-sidebar-menu li {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF; }
+    ul.mobile-sidebar-menu li.header {
+      overflow: hidden;
+      text-overflow: clip;
+      background: #1a2226;
+      color: #FFFFFF;
+      padding: 15px 10px; }
+    ul.mobile-sidebar-menu li a {
+      position: relative;
+      display: block;
+      color: #FFFFFF;
+      border-left: 3px solid transparent;
+      padding: 10px 5px 10px 25px;
+      text-decoration: none; }
+      ul.mobile-sidebar-menu li a i.ico-menu {
+        position: absolute;
+        left: 5px;
+        top: 13px; }
+      ul.mobile-sidebar-menu li a i.ico-indicator {
+        position: absolute;
+        right: 10px;
+        top: 13px; }
+      ul.mobile-sidebar-menu li a:hover, ul.mobile-sidebar-menu li a.active {
+        background-color: #1e282c;
+        border-left-color: #3c8dbc; }
+    ul.mobile-sidebar-menu li.treeview > a {
+      padding-right: 15px; }
+      ul.mobile-sidebar-menu li.treeview > a:after {
+        content: "\f054";
+        color: #FFFFFF;
+        font-family: FontAwesome;
+        position: absolute;
+        right: 5px;
+        top: 13px; }
+    ul.mobile-sidebar-menu li.treeview > a.active:after {
+      content: "\f078"; }
+    ul.mobile-sidebar-menu li.treeview ul.treeview-menu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background-color: #1e282c; }
+      ul.mobile-sidebar-menu li.treeview ul.treeview-menu > li > a {
+        display: block;
+        padding: 10px 15px 10px 35px;
+        color: #8aa4af; }
+        ul.mobile-sidebar-menu li.treeview ul.treeview-menu > li > a:hover {
+          border-left-color: #222d32;
+          background-color: transparent;
+          color: #f0f0f0; }
+    ul.mobile-sidebar-menu li.active {
+      background-color: #1e282c; }
+
+ul.card-treeview {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+  ul.card-treeview li.tree-menu {
+    position: relative; }
+    ul.card-treeview li.tree-menu > ul {
+      display: none; }
+    ul.card-treeview li.tree-menu > a {
+      display: block;
+      position: relative;
+      padding: 8px 15px;
+      text-decoration: none;
+      text-overflow: clip;
+      color: #333; }
+      ul.card-treeview li.tree-menu > a:after {
+        content: "\f054";
+        font-family: FontAwesome;
+        position: absolute;
+        right: 10px;
+        top: 10px; }
+    ul.card-treeview li.tree-menu.active > a:after {
+      content: "\f078"; }
+  ul.card-treeview li.leaf {
+    position: relative; }
+    ul.card-treeview li.leaf a {
+      display: block;
+      position: relative;
+      padding: 8px 25px;
+      text-decoration: none;
+      text-overflow: clip;
+      color: #333; }
+  ul.card-treeview li a:hover, ul.card-treeview li.active > a {
+    background-color: #80C6EE; }
+  ul.card-treeview .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
 
 #stage {
   background: url("../images/stage.jpg") center center no-repeat;
